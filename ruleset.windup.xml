@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset id="python-requirements-review"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+  <metadata>
+    <description>Python Requirements Review</description>
+    <source>Python</source>
+    <target>Python</target>
+  </metadata>
+  <rules>
+    <rule id="python-requirements-review-001">
+      <description>Review requirements.txt</description>
+      <when>
+        <!-- Define a condition to trigger the rule -->
+        <python>
+          <![CDATA[
+          import os
+          os.path.isfile('requirements.txt')
+          ]]>
+        </python>
+      </when>
+      <perform>
+        <!-- Perform an action when the condition is satisfied, e.g., print a message -->
+        <python>
+          <![CDATA[
+          print("Reviewing requirements.txt file...")
+          ]]>
+        </python>
+      </perform>
+    </rule>
+  </rules>
+</ruleset>
